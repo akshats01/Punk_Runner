@@ -157,6 +157,56 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &43462049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43462050}
+  - component: {fileID: 43462051}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &43462050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43462049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -124.744896, y: -11.307568, z: -61.925186}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43462051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43462049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1baa22e311f7c4a9915af0f7098cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 795258392}
+  restartButton: {fileID: 1654342878}
+  startButton: {fileID: 881138582}
+  lvl_a: {fileID: 160281490}
+  lvl_b: {fileID: 1673065242}
+  smoothSpeed: 0.01
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &107500049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,7 +398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 533063987}
+      - m_Target: {fileID: 43462051}
         m_MethodName: ChangeScene_1
         m_Mode: 5
         m_Arguments:
@@ -1713,6 +1763,9 @@ MonoBehaviour:
   gameOver: 0
   slideFlag: 0
   startGame: 0
+  lvl1: 0
+  lvl2: 0
+  lvl3: 0
 --- !u!114 &533063988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3503,7 +3556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 890269311}
+      - m_Target: {fileID: 43462051}
         m_MethodName: startFn
         m_Mode: 1
         m_Arguments:
@@ -6081,7 +6134,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 890269311}
+      - m_Target: {fileID: 43462051}
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -6266,7 +6319,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 533063987}
+      - m_Target: {fileID: 43462051}
         m_MethodName: ChangeScene_2
         m_Mode: 5
         m_Arguments:
@@ -6864,7 +6917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4434221626337540, guid: cdcb19fde9e8cba40b7bff849baf2c1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 429.1
+      value: 574.8
       objectReference: {fileID: 0}
     - target: {fileID: 4434221626337540, guid: cdcb19fde9e8cba40b7bff849baf2c1b, type: 3}
       propertyPath: m_LocalPosition.y

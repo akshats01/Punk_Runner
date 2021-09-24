@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public bool gameOver=false;
     public bool slideFlag=false;
     public bool startGame=false;
+    public bool lvl1=false;
+    public bool lvl2=false;
+    public bool lvl3=false;
     // Start is called before the first frame update
     void Start()//to remove bug where jumping on edge of wall removes gravity, restrict the movement on the wall by taking the centre position of the wall in collision 
     {           //and calculating how much distance from the centre (to each sides) you want to limit for the player.
@@ -134,19 +137,20 @@ public class PlayerController : MonoBehaviour
             flag=false;
         }
         else if(collision.gameObject.CompareTag("obstacle"))
-        {
+        {   
             gameOverFn();
             Debug.Log("Obstacle");
             //playerAnim.SetBool("Death_b",true);
             //playerAnim.SetInteger("DeathType_int",1);
         }
         else if(collision.gameObject.CompareTag("Portal"))
-        {   ChangeScene_2("Level2");
-
+        {   //ChangeScene_2("Level2");
+            lvl2=true;    
         }  
         else if(collision.gameObject.CompareTag("Portal2"))
-        {   ChangeScene_3("Level3");
-
+        {   //ChangeScene_3("Level3");
+            lvl3=true;
+            
         }        
     }
     public void gameOverFn()
@@ -156,6 +160,9 @@ public class PlayerController : MonoBehaviour
         Physics.gravity/=gravityModifier;
         gravityModifier=1;
     }
+    public void gravityHandler()
+    {   Physics.gravity/=gravityModifier;
+    }/*
     public void ChangeScene_1(string sceneName)
     {   //Debug.Log("changescene1");
         SceneManager.LoadScene("Level1");
@@ -170,5 +177,5 @@ public class PlayerController : MonoBehaviour
     {   //Debug.Log("changescene2");
         SceneManager.LoadScene("Level3");
         Physics.gravity/=gravityModifier;
-    }
+    }*/
 }

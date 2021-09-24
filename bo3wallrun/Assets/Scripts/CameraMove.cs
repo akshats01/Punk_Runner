@@ -25,27 +25,13 @@ public class CameraMove : MonoBehaviour
     
     void LateUpdate()
     {
-        if(playerControllerScript.gameOver)
-        {   gameOverText.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
-        }
-        else
+        
+        if(!playerControllerScript.gameOver)
         {   
             Vector3 pos=new Vector3(17.63f+playerControllerScript.playerRb.transform.position.x,5.0f+playerControllerScript.playerRb.transform.position.y,playerControllerScript.playerRb.transform.position.z);
             Vector3 smoothPos=Vector3.Lerp(pos,cameraRb.transform.position,smoothSpeed);
             cameraRb.transform.position=smoothPos;
         }
-        //instead use https://docs.unity3d.com/ScriptReference/Vector3.Lerp.html
-    }
-    public void RestartGame()
-    {   playerControllerScript.gameOverFn();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    public void startFn()
-    {   startButton.gameObject.SetActive(false);
-        playerControllerScript.startGame=true;
-        lvl_a.gameObject.SetActive(false);
-        lvl_b.gameObject.SetActive(false);
-    }
-    
+        
+    } 
 }
